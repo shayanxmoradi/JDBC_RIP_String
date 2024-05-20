@@ -1,20 +1,18 @@
 package army;
 
 public enum Rank {
-    PRIVATE("Private", 1),
-    CORPORAL("Corporal", 2),
-    SERGEANT("Sergeant", 3),
-    LIEUTENANT("Lieutenant", 4),
-    CAPTAIN("Captain", 5),
-    MAJOR("Major", 6),
-    COLONEL("Colonel", 7),
-    GENERAL("General", 8);
+    LIEUTENANT("Lieutenant", 1),
+    SERGEANT("Sergenant", 2),
+    COPORAL("coporal", 3);
+
 
     private final String name;
     private final int level;
 
     // Constructor
     Rank(String name, int level) {
+        if (level>3)level=3;
+        if (level<1)level=1;
         this.name = name;
         this.level = level;
     }
@@ -28,6 +26,8 @@ public enum Rank {
     }
     // Find a rank by its level
     public static Rank getByLevel(int level) {
+        if (level>3)level=3;
+        if (level<1)level=1;
         for (Rank rank : values()) {
             if (rank.getLevel() == level) {
                 return rank;
@@ -41,4 +41,5 @@ public enum Rank {
     public String toString() {
         return this.name;
     }
+
 }
