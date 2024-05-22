@@ -29,6 +29,5 @@ public class Main {
         sequence.replace(sequence5, sequence3);
         System.out.println(sequence);
 
-
     }
 }

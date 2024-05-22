@@ -1,10 +1,10 @@
-package army;
+package army.entity;
 
-public class Offiser {
+public class Officer {
     private int id;
     private String name;
 
-    public Offiser(String name, int id) {
+    public Officer(String name, int id) {
         this.name = name;
         this.id = id;
     }

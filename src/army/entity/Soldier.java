@@ -1,4 +1,4 @@
-package army;
+package army.entity;
 
 import java.util.Arrays;
 

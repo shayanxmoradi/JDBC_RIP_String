@@ -1,4 +1,4 @@
-package army;
+package army.entity;
 
 public enum Rank {
     PRIVATE("Private", 1),

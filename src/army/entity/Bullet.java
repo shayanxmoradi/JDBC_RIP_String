@@ -1,4 +1,4 @@
-package army;
+package army.entity;
 
 public class Bullet {
     private int score;
