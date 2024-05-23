@@ -1,18 +1,17 @@
 package sql;
 
-import java.sql.*;
-import java.util.Scanner;
+import sql.util.ApplicitonProperties;
 
-public class Main {
+import java.sql.*;
+
+public class JDBCApp {
     /**
      * @param args [0]-> password is set here
      * @throws SQLException
      */
     public static void main(String[] args) throws SQLException {
 //config
-        String url = "jdbc:postgresql://localhost:5432/hw7";
-        String user = "postgres";
-        String password = args[0].replace("password=", "");
+
 
         //  System.getenv("key");
 
@@ -42,17 +41,13 @@ public class Main {
                                         ON c1.customer_street = c2.customer_street AND c1.customer_city = c2.customer_city;
                                 
                 """;
-        try {
-            Class.forName("org.postgresql.Driver");
-            //or use
-            //  DriverManager.registerDriver(new org.postgresql.Driver());
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+
 
 
         try (
-                Connection conn = DriverManager.getConnection(url, user, password);
+                Connection conn = DriverManager.getConnection(ApplicitonProperties.url,
+                        ApplicitonProperties.user, ApplicitonProperties.password);
+
                 Statement stmt = conn.createStatement();
                 PreparedStatement pstmt = conn.prepareStatement(query1);
         ) {
@@ -64,15 +59,14 @@ public class Main {
                 System.out.println(rs.getString(3));
 
             }
-            rs.close();
 
-            ResultSet rs2 = stmt.executeQuery(query2);
+             rs = stmt.executeQuery(query2);
             System.out.println("query 2 : \n ");
-            while (rs2.next()) {
-                System.out.print(rs2.getString(1) + ", ");
+            while (rs.next()) {
+                System.out.print(rs.getString(1) + ", ");
 
             }
-            rs2.close();
+            rs.close();
         }
     }
 }
