@@ -27,7 +27,9 @@ public class Util {
             soldiers[i] = soldier;
 
         }
+        Barracks.setSoldiers(soldiers);
         offiser.runExam(soldiers);
+        Barracks.setSoldiers(soldiers);
 
     }
 }

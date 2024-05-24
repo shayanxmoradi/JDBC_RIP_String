@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Barracks {
-   static public List<Soldier> soldiers = new ArrayList<Soldier>();
+   static public Soldier[] soldiers ;
 
-   public static List<Soldier> getSoldiers() {
+   public static Soldier[] getSoldiers() {
       return soldiers;
    }
 
-   public static void setSoldiers(List<Soldier> soldiers) {
+   public static void setSoldiers(Soldier[] soldiers) {
       Barracks.soldiers = soldiers;
    }
 }
