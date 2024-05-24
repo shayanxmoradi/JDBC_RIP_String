@@ -1,15 +1,18 @@
 package sql.domain;
 
-public class Customer {
+public class Customer extends BaseEntity{
     private String name;
     private String street;
     private String city;
 
-    public Customer(String name, String street, String city) {
+    public Customer(Long id, String name, String street, String city) {
+        super(id);
         this.name = name;
         this.street = street;
         this.city = city;
     }
+
+    public Customer(){}
 
     public String getName() {
         return name;

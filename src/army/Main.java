@@ -24,6 +24,7 @@ public class Main {
         Bullet[] bullets2 = {bullet10, bullet11, bulle12, bulle13};
         soldier.setBullets(bullets2);
         officer.runExam(soldier);
+
         GarrisonCommander.showReportList();
 
 

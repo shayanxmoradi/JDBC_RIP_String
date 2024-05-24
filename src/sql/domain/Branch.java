@@ -1,6 +1,6 @@
 package sql.domain;
 
-public class Branch {
+public class Branch extends BaseEntity {
 private String name;
 private String city;
 private double amount;
